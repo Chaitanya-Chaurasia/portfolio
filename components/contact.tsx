@@ -65,6 +65,11 @@ const ContactPage = () => {
   return (
     <div className="relative w-full overflow-hidden py-20">
       <div className="absolute inset-0 -z-10 grid grid-cols-3 p-4 pointer-events-none">
+        <div className="border-r border-t border-dashed border-black"></div>
+        <div className="border-b border-dashed border-black"></div>
+        <div className="border-l border-t border-dashed border-black"></div>
+      </div>
+      <div className="absolute inset-10 -z-10 grid grid-cols-3 p-4 pointer-events-none">
         <div className="border-r border-t border-black"></div>
         <div className="border-b border-black"></div>
         <div className="border-l border-t border-black"></div>
@@ -88,7 +93,7 @@ const ContactPage = () => {
             
             <Textarea
               value={senderMessage}
-              placeholder="my dog says hi..."
+              placeholder="My dog says hi..."
               rows={4}
               className="w-full"
               onChange={(e) => setSenderMessage(e.target.value)}

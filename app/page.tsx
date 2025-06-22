@@ -5,6 +5,8 @@ import Projects from "@/components/projects";
 import Exp from "@/components/exp";
 import ContactPage from "@/components/contact";
 import Footer from "@/components/footer";
+import Photos from "@/components/photos";
+import Hacks from "@/components/hacks";
 export default function Home() {
   return (
     <main className="min-h-screen p-2 flex flex-col gap-6">
@@ -17,11 +19,17 @@ export default function Home() {
       <div className="w-full" id="work">
         <Exp />
       </div>
-      <div className="w-full" id="moreT">
+      <div className="w-full mb-10" id="more">
         <Projects />
       </div>
-      <div className="w-full" id="contact">
+      <div className="w-full mt-20" id="hacks">
+        <Hacks />
+      </div>
+      <div className="w-full mt-20" id="contact">
         <ContactPage />
+      </div>
+      <div className="w-full" id="photos">
+        <Photos />
       </div>
       <Footer />
       

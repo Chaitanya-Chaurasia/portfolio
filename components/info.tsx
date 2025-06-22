@@ -6,7 +6,7 @@ export default function Info() {
     <div className="w-full flex lg:flex-row flex-col items-stretch gap-2">
       <div className="w-full lg:w-1/3 flex flex-col">
         <div className="flex-1 flex flex-col items-center justify-center py-8 px-4">
-          <div className="text-black text-2xl font-semibold tracking-tighter text-center">
+          <div className="text-black text-4xl font-semibold tracking-tighter text-center">
             <span className="font-medium">ai + full stack @ </span>B:Side Capital &
             Funds
           </div>
@@ -50,25 +50,25 @@ export default function Info() {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/3 bg-lime-300 flex flex-col">
+      <div className="w-full lg:w-1/3 bg-black text flex flex-col">
         <div className="flex-1 flex flex-col items-end justify-center p-4">
           <span className="text-white text-5xl font-semibold tracking-tighter">
             i code
           </span>
-          <span className="text-white text-5xl font-semibold tracking-tighter">
+          <span className="text-lime-300 text-5xl font-semibold tracking-tighter">
             i blog
           </span>
-          <span className="text-white text-5xl font-semibold tracking-tighter">
+          <span className="text-rose-400 text-5xl font-semibold tracking-tighter">
             i design
           </span>
-          <span className="text-white text-5xl font-semibold tracking-tighter">
+          <span className="text-blue-400 text-5xl font-semibold tracking-tighter">
             i photograph
           </span>
 
-          <span className="text-white text-5xl font-semibold tracking-tighter">
+          <span className="text-purple-300 text-5xl font-semibold tracking-tighter">
             i play soccer
           </span>
-          <span className="text-white text-5xl font-semibold tracking-tighter">
+          <span className="text-orange-400 text-5xl font-semibold tracking-tighter">
             i travel
           </span>
           <span className="text-white text-5xl font-semibold tracking-tighter">
