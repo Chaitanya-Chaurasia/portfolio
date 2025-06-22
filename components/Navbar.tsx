@@ -2,93 +2,84 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { ModeToggle } from "./ui/dark-mode";
+import { GeistMono } from "geist/font/mono";
+import profile from "@/public/profile.jpg";
+import Image from "next/image";
+import { usePathname } from 'next/navigation';
+
 export function Navbar() {
+  const pathname = usePathname();
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
-    <NavigationMenu className="border p-2 rounded-3xl" id="glass-card-navbar">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
-            </NavigationMenuLink>
+    <div className="w-full" id="home">
+      <div className="flex items-center justify-between bg-black">
+        <div className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-semibold tracking-[-0.1em] text-white whitespace-nowrap w-full">
+          ©2025
+        </div>
+        
+        <div className="hidden md:flex">
+          <Image
+            src={profile.src}
+            alt="Profile"
+            width={120}
+            height={96}
+            className="h-32 w-32 object-cover grayscale"
+            priority
+          />
+        </div>
+
+        <div className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-semibold tracking-[-0.1em] text-white whitespace-nowrap overflow-hidden w-full text-right">
+          CHAITANYA
+        </div>
+      </div>
+
+      <div className={`flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm px-4 sm:px-6 py-2 ${GeistMono.className}`}>
+        <div className="text-center sm:text-left mb-2 sm:mb-0 text-gray-600 dark:text-gray-400">
+          <span className="hidden sm:inline">21 • san francisco • arizona state • chaitanyalvis@gmail.com</span>
+          <span className="sm:hidden">chaitanyalvis@gmail.com</span>
+        </div>
+        
+        <nav className="flex items-center flex-wrap justify-center gap-1 sm:gap-2 md:gap-4">
+          <Link
+            href="#home"
+            onClick={(e) => scrollToSection(e, 'home')}
+            className="px-1 sm:px-2 text-gray-900 hover:text-gray-600 font-medium transition-colors text-xs sm:text-sm"
+          >
+            Home
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/work" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Work
-            </NavigationMenuLink>
+          <span className="text-gray-400 hidden sm:inline">|</span>
+          <Link
+            href="#work"
+            onClick={(e) => scrollToSection(e, 'work')}
+            className="px-1 sm:px-2 text-gray-900 hover:text-gray-600 font-medium transition-colors text-xs sm:text-sm"
+          >
+            Work
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/projects" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
-            </NavigationMenuLink>
+          <span className="text-gray-400 hidden sm:inline">|</span>
+          <Link
+            href="#more"
+            onClick={(e) => scrollToSection(e, 'moreT')}
+            className="px-1 sm:px-2 text-gray-900 hover:text-gray-600 font-medium transition-colors text-xs sm:text-sm"
+          >
+            More
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          {/* <Link href="/Resume.pdf" passHref legacyBehavior>
-            <a
-              download="Resume_Chaitanya"
-              className={navigationMenuTriggerStyle()}
-            >
-              CV
-            </a>
-          </Link> */}
-          <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Blog
-            </NavigationMenuLink>
+          <span className="text-gray-400 hidden sm:inline">|</span>
+          <Link
+            href="#contact"
+            onClick={(e) => scrollToSection(e, 'contact')}
+            className="px-1 sm:px-2 text-gray-900 hover:text-gray-600 font-medium transition-colors text-xs sm:text-sm"
+          >
+            Contact
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/contact" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Get in touch
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <ModeToggle />
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+        </nav>
+      </div>
+    </div>
   );
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          {/* Change CSS props of dropdown here */}
-          <div className="text-sm font-medium leading-none ">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";

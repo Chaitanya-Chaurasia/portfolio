@@ -1,38 +1,49 @@
-"use client";
+import Link from 'next/link';
+import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import { LinkedInLogoIcon } from '@radix-ui/react-icons';
+import { InstagramLogoIcon } from '@radix-ui/react-icons';
 
-import React from "react";
-import { Card, CardHeader } from "./ui/card";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { Div } from "./ui/moving-border";
-const Footer = () => {
-  return (
-    <Div
-      borderRadius="1.75rem"
-      className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-    >
-      <Card className="bg-transparent text-center border-none">
-        <CardHeader>
-          <h2 className="tracking-tight text-sm text-muted-foreground flex gap-2 items-center justify-center">
-            &copy;Chaitanya Chaurasia, 2024.{" "}
-            <a
-              href="https://github.com/Chaitanya-Chaurasia/Portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubLogoIcon
-                height={15}
-                width={15}
-                className="hover:scale-125"
-              />
-            </a>
-          </h2>
-          <h2 className="tracking-tight text-sm">
-            Created using Nextjs, shadcn and a pinch of creativity.
-          </h2>
-        </CardHeader>
-      </Card>
-    </Div>
-  );
-};
-
-export default Footer;
+export default function Footer() {
+    const currentYear = new Date().getFullYear();
+    
+    return (
+        <footer className="w-full py-4 border-t border-gray-200 dark:border-gray-800">
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div className="text-xs font-medium">
+                        {currentYear} Chaitanya Chaurasia. All rights reserved.
+                    </div>
+                    <div className="flex items-center space-x-4">
+                        <Link 
+                            href="https://github.com/Chaitanya-Chaurasia" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
+                            aria-label="GitHub"
+                        >
+                            <GitHubLogoIcon className="w-4 h-4" />
+                        </Link>
+                        <Link 
+                            href="https://linkedin.com/in/chai-t" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
+                            aria-label="LinkedIn"
+                        >
+                            <LinkedInLogoIcon className="w-4 h-4" />
+                        </Link>
+                        <Link 
+                            href="https://instagram.com/chaitanya_chaurasia" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
+                            aria-label="Instagram"
+                        >
+                            <InstagramLogoIcon className="w-4 h-4" />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    )
+}
