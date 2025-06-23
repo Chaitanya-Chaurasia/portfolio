@@ -6,7 +6,7 @@ import { GeistMono } from "geist/font/mono";
 import profile from "@/public/profile.jpg";
 import Image from "next/image";
 
-export function Navbar() {
+export default function Navbar() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();

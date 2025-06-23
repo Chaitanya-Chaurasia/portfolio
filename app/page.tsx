@@ -1,12 +1,13 @@
 import * as React from "react";
 import Info from "@/components/info";
-import { Navbar } from "@/components/xnavbartest2";
 import Projects from "@/components/projects";
 import Exp from "@/components/exp";
 import ContactPage from "@/components/contact";
 import Footer from "@/components/footer";
 import Photos from "@/components/photos";
 import Hacks from "@/components/hacks";
+import Navbar from "@/components/navbar";
+
 export default function Home() {
   return (
     <main className="min-h-screen p-2 flex flex-col gap-6">
