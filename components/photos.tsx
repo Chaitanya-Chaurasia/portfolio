@@ -6,7 +6,7 @@ import { GeistMono } from "geist/font/mono";
 
 export default function Photos() {
   const Photo = ({ src = "", location = "" }) => (
-    <div className={`relative w-[350px] h-[600px]`}>
+    <div className={`relative w-[350px] md:h-[600px] h-[400px]`}>
       <Image
         src={src}
         alt="San Francisco"
@@ -20,7 +20,7 @@ export default function Photos() {
 
   return (
     <div className="w-full p-1">
-      <div className="flex flex-row items-center w-3/4 justify-center mx-auto gap-1">
+      <div className="flex flex-col md:flex-row items-center w-3/4 justify-center mx-auto gap-1">
         <Photo src={pic1.src} location="05/23, leh, india"/>
         <Photo src={pic2.src} location="05/25, new york"/>
         <Photo src={pic3.src} location="12/23, golden gate"/>

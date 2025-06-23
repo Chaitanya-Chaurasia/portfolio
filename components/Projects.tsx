@@ -18,7 +18,7 @@ export default function Projects() {
                 <h2 className="text-white text-7xl font-medium tracking-tighter mb-4">
                   airbnbs, cars, flights, dining, visas-
                   <br />
-                  <span className="text-white/90">
+                  <span className="text-cyan-400">
                     just <span className={`font-medium text-gray-400 ${GeistMono.className}`}>prompt.</span>
                   </span>
                 </h2>
