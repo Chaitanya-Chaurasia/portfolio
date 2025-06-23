@@ -78,7 +78,7 @@ const ContactPage = () => {
       <div className="container mx-auto px-4">
         <div className="bg-white dark:bg-black bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm p-8 rounded-lg max-w-3xl mx-auto">
           <h2 className="text-5xl font-medium tracking-tighter text-center mb-10">
-            I'm bored, let's talk.
+            I&apos;m bored, let&apos;s talk.
           </h2>
           
           <div className="space-y-4 max-w-md mx-auto">

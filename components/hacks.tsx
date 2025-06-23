@@ -45,7 +45,7 @@ export default function Hacks() {
         </h1>
       </div>
       <div className="text-lg font-medium mb-2 text-center w-full">
-        what i've built
+        what i&apos;ve built
       </div>
       <div className={`w-full ${GeistMono.className}`}>
         <div className="max-w-4xl mx-auto">

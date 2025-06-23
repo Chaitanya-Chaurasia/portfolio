@@ -5,7 +5,7 @@ export default function Logos() {
         <div className="w-full overflow-hidden">
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4">
                 <span className="text-sm font-semibold tracking-tighter text-muted-foreground whitespace-nowrap">
-                    I've worked at:
+                    I&apos;ve worked at:
                 </span>
                 {companies.map((company, index) => (
                     <div key={index} className="flex items-center">

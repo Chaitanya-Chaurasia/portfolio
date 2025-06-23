@@ -28,7 +28,7 @@ export default function Projects() {
                   building in stealth. launching soon.
                 </p>
                 <div className="text-white text-md font-medium tracking-tighter text-right">
-                  i'm raising. let's{" "}
+                  i&apos;m raising. let&apos;s{" "}
                   <Link className="underline decoration-blue-500" href="">
                     talk. <ExternalLink className="inline w-3 h-3" />
                   </Link>

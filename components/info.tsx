@@ -72,7 +72,7 @@ export default function Info() {
             i travel
           </span>
           <span className="text-white text-5xl font-semibold tracking-tighter">
-            that's life
+            that&apos;s life
           </span>
         </div>
       </div>
