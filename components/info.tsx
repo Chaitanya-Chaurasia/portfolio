@@ -51,7 +51,7 @@ export default function Info() {
       </div>
 
       <div className="w-full lg:w-1/3 bg-black text flex flex-col">
-        <div className="flex-1 flex flex-col items-end justify-center p-4">
+        <div className="flex-1 flex flex-col items-end justify-center p-4 leading-2">
           <span className="text-white text-5xl font-semibold tracking-tighter">
             i code
           </span>

@@ -22,14 +22,14 @@ export default function Home() {
       <div className="w-full mb-10" id="more">
         <Projects />
       </div>
-      <div className="w-full mt-20" id="hacks">
+      <div className="w-full my-20" id="hacks">
         <Hacks />
+      </div>
+      <div className="w-full mt-20" id="photos">
+        <Photos />
       </div>
       <div className="w-full mt-20" id="contact">
         <ContactPage />
-      </div>
-      <div className="w-full" id="photos">
-        <Photos />
       </div>
       <Footer />
       

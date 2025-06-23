@@ -16,7 +16,7 @@ export default function Projects() {
             <div className="flex-1 flex flex-col justify-between">
               <div>
                 <h2 className="text-white text-7xl font-medium tracking-tighter mb-4">
-                  airbnbs, cars, flights, dining, boats-
+                  airbnbs, cars, flights, dining, visas-
                   <br />
                   <span className="text-white/90">
                     just <span className={`font-medium text-gray-400 ${GeistMono.className}`}>prompt.</span>
