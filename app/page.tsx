@@ -1,10 +1,10 @@
 import * as React from "react";
 import Info from "@/components/info";
 import { Navbar } from "@/components/xnavbartest2";
-import Projects from "@/components/xstprojects";
+import Projects from "@/components/projects";
 import Exp from "@/components/exp";
 import ContactPage from "@/components/contact";
-import Footer from "@/components/test1";
+import Footer from "@/components/footer";
 import Photos from "@/components/photos";
 import Hacks from "@/components/hacks";
 export default function Home() {
