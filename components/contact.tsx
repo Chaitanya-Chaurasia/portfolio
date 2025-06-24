@@ -1,19 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  GitHubLogoIcon,
-  InstagramLogoIcon,
-  LinkedInLogoIcon,
-} from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import { toast } from "sonner";
 import emailjs from "emailjs-com";
 import { isEmailValid } from "@/lib/helper";
-import Image from "next/image";
-import medium from "@/public/medium.svg";
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false);
@@ -30,36 +22,39 @@ const ContactPage = () => {
 
     if (!isEmailValid(senderEmail)) {
       toast.error("Invalid email address");
-    } else {
+      setLoading(false);
+      return;
+    }
+
+    try {
       const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
       const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
 
       const templateParams = {
         from_name: senderEmail,
-        to_name: "chaitanyalvis@gmail.com",
         message: senderMessage,
+        to_name: "Chaitanya",
       };
 
-      const emailSent = await emailjs.send(
+      const response = await emailjs.send(
         serviceID,
         templateID,
         templateParams,
         publicKey
       );
 
-      if (emailSent.status === 200) {
-        toast.success(`Email sent successfully from ${senderEmail}`);
-      } else {
-        toast.error("Failed to send email");
-      }
+      console.log(response);
+      
+      toast.success(`Email sent successfully from ${senderEmail}`);
+      setSenderEmail("");
+      setSenderMessage("");
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send email");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
-    setSenderEmail("");
-    setSenderMessage("");
-
-    return;
   };
 
   return (
@@ -74,13 +69,13 @@ const ContactPage = () => {
         <div className="border-b border-black"></div>
         <div className="border-l border-t border-black"></div>
       </div>
-      
+
       <div className="container mx-auto px-4">
         <div className="bg-white dark:bg-black bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm p-8 rounded-lg max-w-3xl mx-auto">
           <h2 className="text-5xl font-medium tracking-tighter text-center mb-10">
             I&apos;m bored, let&apos;s talk.
           </h2>
-          
+
           <div className="space-y-4 max-w-md mx-auto">
             <Input
               value={senderEmail}
@@ -90,7 +85,7 @@ const ContactPage = () => {
               className="w-full"
               onChange={(e) => setSenderEmail(e.target.value)}
             />
-            
+
             <Textarea
               value={senderMessage}
               placeholder="My dog says hi..."
@@ -98,16 +93,16 @@ const ContactPage = () => {
               className="w-full"
               onChange={(e) => setSenderMessage(e.target.value)}
             />
-            
+
             <div className="flex justify-center">
-              <Button 
+              <Button
                 variant="outline"
                 size="sm"
                 onClick={(e) => sendEmail(senderEmail, senderMessage, e)}
                 disabled={loading}
                 className="w-full sm:w-auto text-xs"
               >
-                {loading ? 'Sending...' : 'Send Message'}
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </div>
           </div>

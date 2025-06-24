@@ -37,13 +37,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className={`flex md:flex-row flex-col items-center justify-between text-xs sm:text-sm px-4 sm:px-6 py-2 ${GeistMono.className}`}>
-        <div className="text-center sm:text-left mb-2 sm:mb-0 text-gray-600 dark:text-gray-400">
+      <div className={`flex lg:flex-row flex-col items-center justify-between text-xs sm:text-sm px-4 sm:px-6 py-2 ${GeistMono.className}`}>
+        <div className="text-center sm:text-left mb-2 sm:mb-0">
           <span className="hidden sm:inline ">21 • san francisco • arizona state • chaitanyalvis@gmail.com</span>
           <span className="sm:hidden">chaitanyalvis@gmail.com</span>
         </div>
         
-        <nav className="flex items-center flex-wrap justify-center gap-1 sm:gap-2 md:gap-4">
+        <nav className="flex items-center flex-wrap justify-center gap-1">
           <Link
             href="#home"
             onClick={(e) => scrollToSection(e, 'home')}
