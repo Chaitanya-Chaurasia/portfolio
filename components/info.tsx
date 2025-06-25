@@ -1,5 +1,6 @@
 import Image from "next/image";
 import stealth from "@/public/stealth.jpg";
+import Link from "next/link";
 
 export default function Info() {
   return (
@@ -15,8 +16,10 @@ export default function Info() {
           </div>
           <div className="text-black flex items-center justify-center gap-2 text-2xl font-medium tracking-tighter text-center">
             building{" "}
-            <span className="pl-1 tracking-tighter bg-black text-white flex items-center justify-center gap-2">
-              Meridian.ai{" "}
+            <span className="pl-1 tracking-tighter bg-black text-white flex items-center justify-center gap-">
+              <Link href="https://meridian-in.com" target="_blank">
+                Meridian.ai
+              </Link>{" "}
               <Image
                 src={stealth}
                 alt="meridian"

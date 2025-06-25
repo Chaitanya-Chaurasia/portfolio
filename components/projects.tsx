@@ -11,7 +11,10 @@ export default function Projects() {
         <div className="w-full lg:w-1/2 bg-black p-6 flex flex-col justify-between">
           <div className="flex flex-col h-full">
             <div className="text-2xl font-medium tracking-tighter text-white mb-10">
-              <span className="font-light">building</span> meridian.ai
+              <span className="font-light">building</span>{" "}
+              <Link href="https://meridian-in.com" target="_blank" className="underline decoration-blue-500">
+                meridian.ai
+              </Link>
             </div>
             <div className="flex-1 flex flex-col justify-between">
               <div>
