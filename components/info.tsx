@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Info() {
   return (
-    <div className="w-full flex lg:flex-row flex-col items-stretch gap-2">
-      <div className="w-full lg:w-1/3 flex flex-col">
+    <div className="w-full flex flex-col items-stretch gap-2">
+      <div className="w-full flex flex-col items-center justify-center min-h-[500px]">
         <div className="flex-1 flex flex-col items-center justify-center py-8 px-4">
           <div className="text-black text-4xl font-semibold tracking-tighter text-center">
             <span className="font-medium">ai + full stack @ </span>B:Side Capital &
@@ -32,7 +32,8 @@ export default function Info() {
           <span className="font-medium mt-20 text-xs">open to work</span>
         </div>
       </div>
-      <div className="w-full lg:w-1/3 flex flex-col">
+      <div className="w-full flex lg:flex-row flex-col items-center justify-center gap-10">
+      <div className="w-full lg:w-1/2 flex flex-col p-20">
         <div className="flex-1 relative">
           <div className="grid grid-cols-4 grid-rows-4 gap-0 w-full h-full min-h-[300px]">
             {Array.from({ length: 16 }).map((_, index) => (
@@ -53,7 +54,7 @@ export default function Info() {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/3 bg-black text flex flex-col">
+      <div className="w-full lg:w-1/2 bg-black text flex flex-col p-20">
         <div className="flex-1 flex flex-col items-end justify-center p-4 leading-2">
           <span className="text-white text-5xl font-semibold tracking-tighter">
             i code
@@ -78,6 +79,7 @@ export default function Info() {
             that&apos;s life
           </span>
         </div>
+      </div>
       </div>
     </div>
   );
