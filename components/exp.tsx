@@ -70,7 +70,7 @@ export default function Exp() {
 
       <div className="w-full flex justify-center mt-8">
         <a
-          href="/resume.pdf"
+          href="/Resume.pdf"
           download
           className="text-xs border border-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition-colors duration-200"
         >
