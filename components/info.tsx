@@ -8,7 +8,7 @@ export default function Info() {
       <div className="w-full flex flex-col items-center justify-center min-h-[500px]">
         <div className="flex-1 flex flex-col items-center justify-center py-8 px-4">
           <div className="text-black text-4xl font-semibold tracking-tighter text-center">
-            <span className="font-medium">re-defining video editing @ </span>Mosaic
+            <span className="font-medium">building editing co-pilots @ </span>Mosaic (YC25)
           </div>
           <div className="text-black text-2xl font-normal tracking-tighter text-center my-2">
             &
