@@ -8,7 +8,7 @@ export default function Info() {
       <div className="w-full flex flex-col items-center justify-center min-h-[500px]">
         <div className="flex-1 flex flex-col items-center justify-center py-8 px-4">
           <div className="text-black text-4xl font-semibold tracking-tighter text-center">
-            <span className="font-medium">building editing co-pilots @ </span>Mosaic (YC25)
+            <span className="font-medium">wifi & embedded systems @ </span> amazon
           </div>
           <div className="text-black text-2xl font-normal tracking-tighter text-center my-2">
             &
@@ -28,7 +28,7 @@ export default function Info() {
               />
             </span>
           </div>
-          <span className="font-medium mt-20 text-xs">open to work</span>
+          {/* <span className="font-medium mt-20 text-xs">open to work</span> */}
         </div>
       </div>
       <div className="w-full flex lg:flex-row flex-col items-center justify-center gap-10">

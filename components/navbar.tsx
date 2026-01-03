@@ -19,7 +19,7 @@ export default function Navbar() {
     <div className="w-full" id="home">
       <div className="flex items-center justify-between bg-black">
         <div className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-semibold tracking-[-0.1em] text-white whitespace-nowrap">
-          ©2025
+          ©2026
         </div>
         <div className="hidden md:flex">
           <Image

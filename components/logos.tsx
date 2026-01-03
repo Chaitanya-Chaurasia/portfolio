@@ -1,5 +1,5 @@
 export default function Logos() {
-    const companies = ["IDEXX", "B:Side Capital & Funds", "ASU", "IIT Delhi", "warp.dev", "Y Combinator and early-stage startups"]
+    const companies = ["IDEXX", "B:Side Capital & Funds", "ASU", "IIT Delhi", "warp.dev", "Mosaic", "Y Combinator and early-stage startups"]
     
     return (
         <div className="w-full overflow-hidden">

@@ -2,6 +2,7 @@
 import { GeistMono } from "geist/font/mono";
 import Logos from "./logos";
 import { useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const TypewriterEffect = () => {
   const phrases = [
@@ -55,15 +56,40 @@ const TypewriterEffect = () => {
 };
 
 export default function Exp() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const phrases = [
+    "i've built ETL pipelines for custom ML models.",
+    "i've designed websites scaling to 100K monthly users.",
+    "i've debugged kernels and migrated legacy codebases.",
+    "i've developed internal APIs for wireless.",
+    "i've designed CRMs to handle $100M+ of assets and capital data.",
+  ];
+
   return (
     <div className="flex flex-col items-center justify-center w-full gap-10 mb-20">
-      <div className="w-full flex min-h-[400px] justify-center items-center">
-        <div
-          className={`text-2xl tracking-tighter ${GeistMono.className} text-right`}
+      <div className="w-full flex flex-col min-h-[400px] justify-center items-center">
+        {isExpanded ? (
+          <div className={`text-base tracking-tighter ${GeistMono.className} text-center space-y-2`}>
+            {phrases.map((phrase, index) => (
+              <div key={index}>{phrase}</div>
+            ))}
+          </div>
+        ) : (
+          <div className={`text-2xl tracking-tighter ${GeistMono.className} text-center`}>
+            <TypewriterEffect />
+          </div>
+        )}
+        <button 
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="flex items-center gap-2 mt-4 hover:opacity-70 transition-opacity"
         >
-          <TypewriterEffect />
-        </div>
+          <span className="text-xs tracking-tighter">
+            {isExpanded ? 'show less' : 'show more'}
+          </span>
+          <ChevronDown className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+        </button>
       </div>
+
       <div className="w-full flex justify-center items-center">
         <Logos />
       </div>
