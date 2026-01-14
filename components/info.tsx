@@ -1,6 +1,8 @@
 import Image from "next/image";
 import stealth from "@/public/stealth.jpg";
 import Link from "next/link";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+
 
 export default function Info() {
   return (
@@ -28,7 +30,10 @@ export default function Info() {
               />
             </span>
           </div>
-          {/* <span className="font-medium mt-20 text-xs">open to work</span> */}
+          <div className="text-black text-center my-20 border border-dashed border-gray-300 px-4 flex justify-center items-center gap-2">
+            <span className="font-medium text-xs flex items-center gap-2"><LinkedInLogoIcon className="w-4 h-4" /> my linkedin post blew up:</span>
+            <span className="text-xs font-semibold tracking-tight"><Link href="https://www.linkedin.com/feed/update/urn:li:activity:7415087057733242880/" rel="noopener noreferrer" target="_blank">raw advice i wish i got at 16... (read more)</Link></span>
+          </div>
         </div>
       </div>
       <div className="w-full flex lg:flex-row flex-col items-center justify-center gap-10">
