@@ -17,6 +17,33 @@ export default function Navbar() {
   };
   return (
     <div className="w-full" id="home">
+      <div className={`flex items-center justify-between py-1.5 text-xs lowercase tracking-tighter text-black ${GeistMono.className}`}>
+        <div className="hidden sm:block">
+          21 &nbsp;&bull;&nbsp; san francisco &nbsp;&bull;&nbsp; arizona state (go devils) &nbsp;&bull;&nbsp; chaitanyalvis@gmail.com
+        </div>
+        <nav className="flex items-center gap-4">
+          <Link href="https://medium.com/@chaitanyalvis" target="_blank" rel="noopener noreferrer" className="hover:text-gray-500 transition-colors">
+            <span className="text-gray-400">[B]</span> blog
+          </Link>
+          
+          <Link href="#home" onClick={(e) => scrollToSection(e, 'home')} className="hover:text-gray-500 transition-colors">
+            <span className="text-gray-400">[H]</span> home
+          </Link>
+          <Link href="#work" onClick={(e) => scrollToSection(e, 'work')} className="hover:text-gray-500 transition-colors">
+            <span className="text-gray-400">[W]</span> work
+          </Link>
+          <Link href="#more" onClick={(e) => scrollToSection(e, 'more')} className="hover:text-gray-500 transition-colors">
+            <span className="text-gray-400">[M]</span> more
+          </Link>
+          <Link href="#photos" onClick={(e) => scrollToSection(e, 'photos')} className="hover:text-gray-500 transition-colors">
+            <span className="text-gray-400">[S]</span> snaps
+          </Link>
+          <Link href="mailto:chaitanyalvis@gmail.com" className="hover:text-gray-500 transition-colors">
+            <span className="text-gray-400">[S]</span> social
+          </Link>
+        </nav>
+      </div>
+
       <div className="flex items-center justify-between bg-black">
         <div className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-semibold tracking-[-0.1em] text-white whitespace-nowrap">
           ©2026
@@ -35,56 +62,6 @@ export default function Navbar() {
         <div className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-semibold tracking-[-0.1em] text-white whitespace-nowrap overflow-hidden text-right">
           CHAITANYA
         </div>
-      </div>
-
-      <div className={`flex lg:flex-row flex-col items-center justify-between text-xs sm:text-sm px-4 sm:px-6 py-2 ${GeistMono.className}`}>
-        <div className="text-center sm:text-left mb-2 sm:mb-0">
-          <span className="hidden sm:inline ">21 • san francisco • arizona state • chaitanyalvis@gmail.com</span>
-          <span className="sm:hidden">chaitanyalvis@gmail.com</span>
-        </div>
-        
-        <nav className="flex items-center flex-wrap justify-center gap-1">
-          <Link
-            href="#home"
-            onClick={(e) => scrollToSection(e, 'home')}
-            className="px-1 sm:px-2 text-muted-foreground font-medium transition-colors text-xs sm:text-sm"
-          >
-            Home
-          </Link>
-          <span className="text-gray-400 hidden sm:inline">|</span>
-          <Link
-            href="#work"
-            onClick={(e) => scrollToSection(e, 'work')}
-            className="px-1 sm:px-2 text-muted-foreground font-medium transition-colors text-xs sm:text-sm"
-          >
-            Work
-          </Link>
-          <span className="text-gray-400 hidden sm:inline">|</span>
-          <Link
-            href="#more"
-            onClick={(e) => scrollToSection(e, 'more')}
-            className="px-1 sm:px-2 text-muted-foreground font-medium transition-colors text-xs sm:text-sm"
-          >
-            More
-          </Link>
-          
-          <span className="text-gray-400 hidden sm:inline">|</span>
-          <Link
-            href="#photos"
-            onClick={(e) => scrollToSection(e, 'photos')}
-            className="px-1 sm:px-2 text-muted-foreground font-medium transition-colors text-xs sm:text-sm"
-          >
-            Snaps
-          </Link>
-          <span className="text-gray-400 hidden sm:inline">|</span>
-          <Link
-            href="#contact"
-            onClick={(e) => scrollToSection(e, 'contact')}
-            className="px-1 sm:px-2 text-muted-foreground font-medium transition-colors text-xs sm:text-sm"
-          >
-            Contact
-          </Link>
-        </nav>
       </div>
     </div>
   );

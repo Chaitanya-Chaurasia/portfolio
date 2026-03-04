@@ -1,16 +1,57 @@
+"use client";
+
 import Image from "next/image";
 import stealth from "@/public/stealth.jpg";
 import Link from "next/link";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 
+function WifiWaves() {
+  return (
+    <span className="inline-flex items-center ml-2 gap-[3px]">
+      <style>{`
+        @keyframes wave {
+          0%, 100% { opacity: 0.15; }
+          50% { opacity: 1; }
+        }
+      `}</style>
+      {["·", ")", ")", ")"].map((char, i) => (
+        <span
+          key={i}
+          className="text-black font-semibold"
+          style={{
+            animation: `wave 2s ease-in-out infinite`,
+            animationDelay: `${i * 0.3}s`,
+          }}
+        >
+          {char}
+        </span>
+      ))}
+      <span className="mx-1 opacity-30">~</span>
+      {["(", "(", "(", "·"].map((char, i) => (
+        <span
+          key={i}
+          className="text-black font-semibold"
+          style={{
+            animation: `wave 2s ease-in-out infinite`,
+            animationDelay: `${(3 - i) * 0.3}s`,
+          }}
+        >
+          {char}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export default function Info() {
   return (
     <div className="w-full flex flex-col items-stretch gap-2">
       <div className="w-full flex flex-col items-center justify-center min-h-[500px]">
         <div className="flex-1 flex flex-col items-center justify-center py-8 px-4">
-          <div className="text-black text-4xl font-semibold tracking-tighter text-center">
-            <span className="font-medium">wifi & embedded systems @ </span> amazon
+          <div className="text-black text-4xl font-semibold tracking-tighter text-center flex items-center justify-center">
+            <WifiWaves />
+            <span className="font-medium mx-2">wifi & embedded systems @ </span> amazon
+            <WifiWaves />
           </div>
           <div className="text-black text-2xl font-normal tracking-tighter text-center my-2">
             &
