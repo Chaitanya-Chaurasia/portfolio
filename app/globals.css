@@ -20,6 +20,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* reserve the scrollbar's width always, so switching tabs can't shift the
+     centered layout sideways when a vertical scrollbar appears/disappears */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -102,10 +105,74 @@ section {
 .post-date {
   color: var(--ink);
   opacity: 0.55;
+  font-size: 0.8em;
+}
+
+.prev-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.work-list li {
+  margin: 0 0 0.6em;
+}
+
+.prev-item .prev-name {
+  font-weight: 400;
+}
+
+.prev-item .prev-role {
+  color: var(--ink);
+  opacity: 0.55;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+.semi {
+  font-weight: 600;
+}
+
+.post-nav {
+  display: flex;
+  gap: 18px;
+  margin: 16px 0 8px;
+  font-size: 0.85em;
+}
+.post-nav .disabled {
+  opacity: 0.35;
+}
+
+.scroll-top {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.85em;
+  color: var(--link);
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: opacity 0.15s ease;
+}
+.scroll-top:hover {
+  color: var(--link-hover);
 }
 
 .prose {
   margin-top: 24px;
+  text-transform: lowercase;
 }
 .prose p {
   margin: 0 0 0.9em;
@@ -160,12 +227,25 @@ section {
 .nav-top a {
   color: var(--ink);
   text-decoration: none;
+  opacity: 0.55;
+  display: inline-block;
+  transform-origin: left center;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 .nav-top a:hover {
-  text-decoration: underline;
+  opacity: 1;
+  transform: scale(1.12);
 }
 .nav-top a.active {
   font-weight: 600;
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+@media (min-width: 880px) {
+  .nav-top a {
+    transform-origin: right center;
+  }
 }
 
 @media (min-width: 880px) {
@@ -175,7 +255,6 @@ section {
     gap: 4px;
     margin: 0;
     padding: 64px 16px 16px 0;
-    border-right: 1px dashed var(--rule);
     text-align: right;
     position: sticky;
     top: 0;
@@ -187,17 +266,25 @@ footer.foot {
   margin-top: 48px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 12px;
   border-top: 1px dashed var(--rule);
   padding-top: 16px;
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .foot-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+  flex-wrap: nowrap;
+  gap: 14px;
+}
+
+.foot-meta {
+  color: var(--ink);
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
 }
 
 ::selection {
